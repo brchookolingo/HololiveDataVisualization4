@@ -1,0 +1,22 @@
+Data visualization showing which Hololive members collaborate the most. Data was pulled from Youtube 2021-04-11.
+
+Interactive Version (Allows you to hover over different names to get the specific values!): https://confident-pare-2afeb0.netlify.app/
+
+Why:
+This is just a fun project that I though people might find intresting. It's just me playing around try to improve my coding skills.
+
+Data Caveats:
+Does not capture any unarchived or members-only content.
+Does not capture unofficial collaborations; basically the video description has to have the other channel linked for the code to identify that a collaboration occured.
+Collaborations are calculated at the Channel level; so if Ina did a collab with Kiara but only Kiara streamed, then Kiara's collab count would increase but not Ina's. I'm hoping to fix the inaccuracy by expanding the dataset to reflect collab pairs.
+
+Coming Soon:
+I want to do a network relationship mapping and maybe create a cool looking network visuzlization where members get grouped based on how much they collab.
+I might also try doing a top 3 list where it's an image showing each members top 3 collab partners.
+
+
+Source: Youtube API
+
+Data Collection Date: 2021/04/11
+
+Tools: Data Processing in Python and Visualization Python Plotly
