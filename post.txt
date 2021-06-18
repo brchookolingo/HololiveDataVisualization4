@@ -5,10 +5,17 @@ Interactive Version (Allows you to hover over different names to get the specifi
 Why:
 This is just a fun project that I though people might find intresting. It's just me playing around try to improve my coding skills.
 
-Data Caveats:
+How is a Collaboration determined:
+All the Hololive members use a fairly similar video description pattern and are all very good at linking other channels when they collab. Every Youtube channel has a unique ID which can be found in the channel's URL.
+So what the code does is it makes a bunch of API calls to Youtube to pull the video description of every single video from all 52 channels. It then does a string search through every video looking for any one of the other channel's unqiue identifiers.
+The data then gets aggregated to the Channel level which how we get the number of collab videos.
+
+This does present an intresting problem -- If Kiara and Ina collab but only Kiara streams the collab then only Kiara's collab count will increase. So a more accurate description may be Channel collab count rather than Member collab count.
+I think there is a way to handle this by counting all instance where a video has channels unique ID. Then to avoid doublecoutning there is also a datetime check so if both channels did stream it ould only get counted once.
+
+Additional notes:
 Does not capture any unarchived or members-only content.
 Does not capture unofficial collaborations; basically the video description has to have the other channel linked for the code to identify that a collaboration occured.
-Collaborations are calculated at the Channel level; so if Ina did a collab with Kiara but only Kiara streamed, then Kiara's collab count would increase but not Ina's. I'm hoping to fix the inaccuracy by expanding the dataset to reflect collab pairs.
 
 Coming Soon:
 I want to do a network relationship mapping and maybe create a cool looking network visuzlization where members get grouped based on how much they collab.
